@@ -51,7 +51,7 @@ module "postgresql" {
   trigger_password_reset = "1"
   
   enable_read_only_group_access = false
-  enable_db_report_privileges = true
+  enable_db_report_privileges = false
   force_db_report_privileges_trigger = "1"
   
   kv_name = "sds-platform-sbox"
