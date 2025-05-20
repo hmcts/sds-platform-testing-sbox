@@ -7,6 +7,10 @@ module "key_vault" {
   resource_group_name = "sds-platform-testing-data-sbox"
   product_group_name  = "DTS Platform Operations"
   common_tags         = module.common_tags.common_tags
+
+  depends_on = [
+    module.postgresql
+  ]
 }
 
 resource "azurerm_key_vault_secret" "POSTGRES-USER" {
