@@ -1,9 +1,0 @@
-#!groovy
-
-@Library("Infrastructure") _
-
-def product = "sds-platform"
-def component = "testing"
-
-withInfraPipeline(product, component) {
-}
