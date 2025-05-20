@@ -65,7 +65,7 @@ module "postgresql" {
 }
 
 module "common_tags" {
-  source      = "git::https://github.com/hmcts/terraform-module-common-tags.git?ref=master"
+  source      = "git@github.com:hmcts/terraform-module-common-tags.git?ref=master"
   environment = "sandbox"
   product     = "sds-platform"
   builtFrom   = "Manual"
