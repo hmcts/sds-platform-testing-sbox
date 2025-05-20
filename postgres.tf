@@ -12,13 +12,13 @@ module "key_vault" {
 resource "azurerm_key_vault_secret" "POSTGRES-USER" {
   name         = "sds-platform-testing-POSTGRES-USER"
   value        = module.postgresql.username
-  key_vault_id = module.key_vault.key_vault.id
+  key_vault_id = module.key_vault.id
 }
 
 resource "azurerm_key_vault_secret" "POSTGRES-PASS" {
   name         = "sds-platform-testing-POSTGRES-PASS"
   value        = module.postgresql.password
-  key_vault_id = module.key_vault.key_vault.id
+  key_vault_id = module.key_vault.id
 }
 
 module "postgresql" {
