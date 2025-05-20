@@ -52,7 +52,7 @@ module "postgresql" {
   
   enable_read_only_group_access = false
   enable_db_report_privileges = true
-  force_db_report_privileges_trigger = "1"
+  force_db_report_privileges_trigger = "0"
   
   kv_name = "sds-platform-sbox"
   kv_subscription = "DTS-SHAREDSERVICES-SBOX"
