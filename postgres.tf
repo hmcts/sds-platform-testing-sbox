@@ -1,6 +1,6 @@
 module "key_vault" {
   source              = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
-  name                = "sds-platform-sbox" // Max 24 characters
+  name                = "sds-platform-test-sbox" // Max 24 characters
   product             = var.product
   env                 = var.env
   object_id           = var.jenkins_AAD_objectId
