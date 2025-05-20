@@ -1,8 +1,3 @@
-data "azurerm_key_vault" "key_vault" {
-  name                = "sds-platform-sbox"
-  resource_group_name = "sds-platform-testing-data-sbox"
-}
-
 module "key_vault" {
   source              = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
   name                = "sds-platform-sbox" // Max 24 characters
@@ -17,13 +12,13 @@ module "key_vault" {
 resource "azurerm_key_vault_secret" "POSTGRES-USER" {
   name         = "sds-platform-testing-POSTGRES-USER"
   value        = module.postgresql.username
-  key_vault_id = module.azurerm_key_vault.key_vault.id
+  key_vault_id = module.key_vault.key_vault.id
 }
 
 resource "azurerm_key_vault_secret" "POSTGRES-PASS" {
   name         = "sds-platform-testing-POSTGRES-PASS"
   value        = module.postgresql.password
-  key_vault_id = module.azurerm_key_vault.key_vault.id
+  key_vault_id = module.key_vault.key_vault.id
 }
 
 module "postgresql" {
